@@ -119,4 +119,9 @@ ul li {
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
+  border-radius:100px;
+  background-color:#202023;
+  border:0;
+  color:#fff;
+  display:block;
 }
