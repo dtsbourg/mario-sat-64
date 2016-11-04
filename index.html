@@ -1,23 +1,33 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>SAT - MK64</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <meta name="author" content="Dylan Bourgeois">
+    </head>
 
-<div id="container">
-    <header>
-         <h1>Best scores</h1>
-         <a href="#" id="clear">Clear all</a>
-    </header>
-    <section id="taskIOSection">
-        <div id="formContainer">
-                <form id="taskEntryForm">
-                    <input id="playerInput" placeholder="Player name" />
-                    <input id="timeInputMin" placeholder="min" />
-                    <input id="timeInputSec" placeholder="sec" />
-                    <input id="timeInputMillis" placeholder="msec" />
-                    <input type="submit"/>
-                </form>
-                <ul id="taskList"></ul>
+    <body>
+        <div id="container">
+            <header>
+                 <h1>Best scores</h1>
+                 <a href="#" id="clear">Clear all</a>
+            </header>
+            <section id="taskIOSection">
+                <div id="formContainer">
+                        <form id="taskEntryForm">
+                            <input id="playerInput" placeholder="Player name" />
+                            <input id="timeInputMin" placeholder="min" />
+                            <input id="timeInputSec" placeholder="sec" />
+                            <input id="timeInputMillis" placeholder="msec" />
+                            <input type="submit"/>
+                        </form>
+                        <ul id="taskList"></ul>
+                </div>
+            </section>
         </div>
-    </section>
-</div>
+    </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="mk64.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="mk64.js"></script>
+</html>

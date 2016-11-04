@@ -2,6 +2,7 @@
 $(document).ready(function () {
     var Player = function(name, time) {
         return {
+            uid : Date.now(),
             name : name,
             times : [time],
             bestTime : time
@@ -31,7 +32,7 @@ $(document).ready(function () {
         return bt;
     }
 
-    function compareBestTimes(playerA,playerB) {
+    function compareBestTimes(playerA, playerB) {
       if (playerA.bestTime < playerB.bestTime)
         return -1;
       if (playerA.bestTime > playerB.bestTime)
@@ -62,8 +63,8 @@ $(document).ready(function () {
     }
 
     players.sort(compareBestTimes);
-§    for (var p in players) {
-        $('#taskList').append("<li id='" + players[p].name + "'>" + players[p].name + "  --  " + getTimeString(players[p].bestTime) + "</li>");
+    for (var p in players) {
+        $('#taskList').append("<li id='" + players[p].uid + "'>" + players[p].name + "  --  " + getTimeString(players[p].bestTime) + "</li>");
     }
 
     // 2. Save data to local Storage
@@ -80,6 +81,7 @@ $(document).ready(function () {
             // Check time is valid
             if (!checkValidTime(timeMin, timeSec, timeMillis)) {
                 alert("Invalid time !");
+                return false;
             }
 
             // Check if player is on record
