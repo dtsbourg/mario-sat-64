@@ -56,6 +56,13 @@ $(document).ready(function () {
               && timeMillis >= 0);
     }
 
+    function saveText(text, filename) {
+          var a = document.createElement('a');
+          a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
+          a.setAttribute('download', filename);
+          a.click();
+    }
+
     // 1. Load data from local Storage
     var players = [];
     for (var uid in localStorage) {
@@ -128,7 +135,8 @@ $(document).ready(function () {
 
     // Delete all players
     // USE WITH CAUTION
-    $('#clear').click(function () {
-        localStorage.clear();
+    $('#backup').click(function () {
+        //localStorage.clear();
+        saveText(JSON.stringify(localStorage), 'backup-' + Date.now());
     });
 });
